@@ -28,6 +28,15 @@ function openModal() {
   var bulbQuantity = document.getElementById('quantity-counter').innerHTML;
   var convertedQuantity = parseInt(bulbQuantity);
   var totalCost = convertedQuantity * 12.99;
+
+  if (convertedQuantity === 0) {
+    modal.innerHTML = `
+    <button id="close-modal">x</button>
+    <h2>Whoops! Did you forget to select a quantity of bulbs?</h2>
+    `;
+    modal.style.display = 'block';
+  } else {
+
   modal.innerHTML = `
   <button id="close-modal">x</button>
   <h2>Your Basket</h2>
@@ -35,6 +44,7 @@ function openModal() {
   <p>Quantity: ${bulbQuantity} Bulbs</p>
   `
   modal.style.display = 'block';
+  };
 };
 
 function closeModal() {
@@ -42,6 +52,16 @@ function closeModal() {
 }
 
 function viewModal() {
+  var bulbQuantity = document.getElementById('quantity-counter').innerHTML;
+  if (bulbQuantity === "0") {
+    modal.innerHTML = `
+    <button id="close-modal">x</button>
+    <h2>Your Basket is Empty</h2>
+    `;
+    modal.style.display = 'block';
+  } else {
+
   modal.style.display = 'block';
+  };
 }
 
