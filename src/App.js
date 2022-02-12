@@ -30,7 +30,7 @@ function App() {
               </div>
               <Quantity/>
             </div>
-          <button id="add-to-cart-button">Add to Cart</button>
+          <button id="add-to-cart-button"><b>Add to Cart</b></button>
         </section>
 
         <section class="description">
